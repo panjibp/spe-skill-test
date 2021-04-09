@@ -12,9 +12,9 @@ class SpeSkillTest
         //
     }
 
-    public static function needleHaystack()
+    public static function needleHaystack($haystack, $needle)
     {
-        //
+        echo $haystack[1];
     }
 
     public static function blueOceanReverse()
@@ -22,3 +22,7 @@ class SpeSkillTest
         //
     }
 }
+
+$spe = new SpeSkillTest;
+
+$spe::needleHaystack(["red", "blue", "yellow", "black", "grey"], "blue");

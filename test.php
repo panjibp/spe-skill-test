@@ -36,7 +36,11 @@ class SpeSkillTest
 
     public static function needleHaystack($haystack, $needle)
     {
-        echo $haystack[1];
+        foreach ($haystack as $key => $value) {
+            if ($value == $needle) {
+                echo $key;
+            }
+        };
     }
 
     public static function blueOceanReverse($array, $single)

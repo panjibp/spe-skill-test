@@ -2,9 +2,27 @@
 
 class SpeSkillTest
 {
-    public static function narcissisticNumber()
+    public static function narcissisticNumber($number)
     {
-        //
+        $sum = 0;
+
+        $n = $number;
+
+        $temp = $n;
+
+        $totalDigits = strlen($n);
+
+        while ($n != 0) {
+            $r = $n % 10;
+            $sum = $sum + pow($r, $totalDigits);
+            $n = floor($n / 10);
+        }
+
+        if ($sum == $temp) {
+            echo "true";
+        } else {
+            echo "false";
+        }
     }
 
     public static function parityOutlier($number)
@@ -42,3 +60,8 @@ echo "<br><br>";
 
 echo "Parity Outlier:<br>";
 $spe::parityOutlier([2, 4, 5, 6]);
+
+echo "<br><br>";
+
+echo "Narcissistic Number:<br>";
+$spe::narcissisticNumber(153);
